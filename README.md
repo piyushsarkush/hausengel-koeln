@@ -33,19 +33,13 @@ mit einem Kommentar markiert, zum Beispiel:
 Einfach den Text zwischen den Anführungszeichen bzw. zwischen `<p>` und `</p>`
 ändern, speichern, Browser neu laden.
 
-## Bilder und Piktogramme einsetzen
+## Bilder ergänzen
 
-Überall, wo noch ein Kasten mit schwarzem Rand steht, gehört später ein Bild
-hin. Im Code sieht das so aus:
-
-```html
-<div class="placeholder placeholder--image placeholder--hero">Hier Bild einfügen</div>
-```
-
-So wird daraus ein echtes Bild:
+Die Seite kommt bewusst ohne Fotos aus. Soll später doch eines dazukommen –
+etwa ein Porträt im Abschnitt „Über mich":
 
 1. Bilddatei in den Ordner `assets/` legen, zum Beispiel `assets/naina.jpg`
-2. Die Zeile ersetzen durch:
+2. An der gewünschten Stelle in `index.html` einfügen:
 
 ```html
 <img src="assets/naina.jpg" alt="Naina Sarkush">
@@ -54,8 +48,9 @@ So wird daraus ein echtes Bild:
 Der `alt`-Text beschreibt das Bild für blinde Nutzer und für Google – er sollte
 kurz sagen, was zu sehen ist.
 
-Bei den Piktogrammen (`placeholder--icon`) funktioniert es genauso, nur mit
-kleineren Bildern.
+Die Symbole auf den Leistungskarten sind direkt als SVG in `index.html`
+eingebaut. Ihre Farbe und Größe lassen sich über die Klasse `.card__icon` in
+`css/style.css` ändern.
 
 ## Farben und Schriftgrößen ändern
 
@@ -67,9 +62,8 @@ Variablen. Wird dort ein Wert geändert, ändert sich die ganze Seite mit.
 - [ ] Gelbe Hinweis-Kästen in `impressum.html` und `datenschutz.html` entfernen
 - [ ] Gelb markierte Lücken ausfüllen (Umsatzsteuer, anerkennende Stelle)
 - [ ] Rechtstexte prüfen lassen (z. B. mit einem Generator wie e-recht24.de)
-- [ ] Platzhalter durch echte Bilder ersetzen
 - [ ] Texte gegenlesen lassen
-- [ ] Preise und Öffnungszeiten auf Aktualität prüfen
+- [ ] Kontaktdaten und Öffnungszeiten auf Aktualität prüfen
 
 ## Veröffentlichen über GitHub Pages
 

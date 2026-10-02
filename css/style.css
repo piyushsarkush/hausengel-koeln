@@ -125,6 +125,9 @@ summary:focus-visible {
   margin: 0;
 }
 
+/* Begrenzt die Zeilenlänge bei reinen Textabschnitten auf gut lesbare Breite */
+.textblock { max-width: 780px; }
+
 /* ---------- Buttons ---------- */
 
 .btn {
@@ -164,33 +167,17 @@ summary:focus-visible {
   color: #fff;
 }
 
-/* ---------- Platzhalter (später durch echte Bilder ersetzen) ---------- */
+/* ---------- Symbole auf den Leistungskarten ---------- */
 
-.placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border: 2px solid #111;
-  border-radius: var(--radius);
-  background: transparent;
-  color: #111;
-  font-size: 15px;
-  font-weight: 500;
-  padding: 12px;
-}
-
-.placeholder--image { width: 100%; }
-.placeholder--hero     { aspect-ratio: 4 / 3; }
-.placeholder--portrait { aspect-ratio: 4 / 5; }
-
-.placeholder--icon {
-  width: 56px;
-  height: 56px;
-  font-size: 10px;
-  line-height: 1.25;
-  padding: 4px;
+.card__icon {
+  width: 40px;
+  height: 40px;
   margin-bottom: 20px;
+  fill: none;
+  stroke: var(--gruen);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 /* ---------- Kopfbereich ---------- */
@@ -285,10 +272,8 @@ summary:focus-visible {
 }
 
 .hero__inner {
-  display: grid;
-  grid-template-columns: 1.12fr .88fr;
-  gap: 56px;
-  align-items: center;
+  max-width: 780px;
+  text-align: center;
 }
 
 .hero h1 { margin-bottom: 20px; }
@@ -296,8 +281,9 @@ summary:focus-visible {
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 14px;
-  margin-top: 32px;
+  margin-top: 36px;
 }
 
 /* ---------- Vertrauensleiste ---------- */
@@ -390,49 +376,10 @@ summary:focus-visible {
   margin: 0;
 }
 
-/* ---------- Preise ---------- */
-
-.price-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  align-items: start;
-}
-
-.price-card {
-  background: var(--flaeche);
-  border: 1px solid var(--rahmen);
-  border-radius: var(--radius-gross);
-  padding: 16px 32px;
-}
-
-.price-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.price-list li {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 12px;
-  padding: 22px 0;
-  border-bottom: 1px solid var(--rahmen);
-}
-.price-list li:last-child { border-bottom: none; }
-
-.price-list__label { font-size: 18px; }
-
-.price-list__value {
-  font-size: 26px;
-  font-weight: 700;
-  color: var(--gruen-dunkel);
-  white-space: nowrap;
-}
+/* ---------- Hinweiskasten (Pflegekasse) ---------- */
 
 .notice {
+  max-width: 780px;
   background: var(--gruen-hell);
   border: 1px solid #cfe0d4;
   border-radius: var(--radius-gross);
@@ -450,13 +397,6 @@ summary:focus-visible {
 .notice .btn { margin-top: 10px; }
 
 /* ---------- Über mich ---------- */
-
-.about {
-  display: grid;
-  grid-template-columns: .8fr 1.2fr;
-  gap: 56px;
-  align-items: center;
-}
 
 .badges {
   list-style: none;
@@ -490,6 +430,7 @@ summary:focus-visible {
 .faq {
   display: grid;
   gap: 14px;
+  max-width: 860px;
 }
 
 .faq__item {
@@ -566,7 +507,7 @@ summary:focus-visible {
   display: block;
   font-size: 27px;
   font-weight: 700;
-  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .contact-details {
@@ -696,19 +637,9 @@ summary:focus-visible {
   h1 { font-size: 36px; }
   h2 { font-size: 30px; }
 
-  .hero__inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .hero__image { order: -1; }
-
   .cards,
   .steps,
   .contact-details { grid-template-columns: repeat(2, 1fr); }
-
-  .price-layout,
-  .about { grid-template-columns: 1fr; gap: 40px; }
 }
 
 @media (max-width: 760px) {
@@ -773,13 +704,12 @@ summary:focus-visible {
 
   .card { padding: 26px; }
 
-  .price-card { padding: 8px 24px; }
   .notice { padding: 26px; }
 
   .faq__item summary { padding: 18px 20px; font-size: 18px; }
   .faq__answer { padding: 0 20px 20px; }
 
-  .contact__value { font-size: 23px; }
+  .contact__value { font-size: 21px; }
 
   .site-footer__inner { flex-direction: column; align-items: flex-start; }
   .site-footer__brand { flex-direction: column; align-items: flex-start; gap: 16px; }
