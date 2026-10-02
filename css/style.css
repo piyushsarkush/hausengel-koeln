@@ -170,12 +170,13 @@ summary:focus-visible {
 /* ---------- Symbole auf den Leistungskarten ---------- */
 
 .card__icon {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 20px;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 18px;
   fill: none;
-  stroke: var(--gruen);
-  stroke-width: 1.6;
+  color: var(--gruen);
+  stroke: currentColor;
+  stroke-width: 1.7;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
